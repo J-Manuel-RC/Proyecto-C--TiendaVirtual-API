@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProyectoTiendaVirtual_API.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -75,6 +78,5 @@ namespace ProyectoTiendaVirtual_API.Controllers
 
             return $"User {user.Nombres} deleted successfully";
         }
-
     }
 }
