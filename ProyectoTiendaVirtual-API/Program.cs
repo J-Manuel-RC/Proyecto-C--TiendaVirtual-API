@@ -19,6 +19,18 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// permitir que React acceda al servicio por medio de:
+// http://localhost:3000
+app.UseCors(
+    opt => {
+        opt.AllowAnyHeader();
+        opt.AllowAnyMethod();
+        //opt.AllowAnyOrigin();
+        opt.WithOrigins("http://localhost:3000");
+    }
+    );
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
