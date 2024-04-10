@@ -27,6 +27,11 @@ namespace ProyectoTiendaVirtual_API.Models
         public virtual DbSet<Producto> Productos { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
+        public virtual DbSet<SP_comentario_por_producto> SP_Comentario_Por_Productos { get; set; } = null!;
+        public virtual DbSet<SP_comentario_por_puntuacion> SP_Comentario_Por_Puntuaciones { get; set; } = null!;
+        public virtual DbSet<SP_comentario_por_usuario> SP_Comentario_Por_Usuarios { get; set; } = null!;
+        public virtual DbSet<SP_producto_por_marca> SP_Producto_Por_Marcas { get; set; } = null!;
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
         }
