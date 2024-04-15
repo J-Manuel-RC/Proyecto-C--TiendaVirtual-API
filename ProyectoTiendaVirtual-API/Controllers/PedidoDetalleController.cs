@@ -36,7 +36,11 @@ namespace ProyectoTiendaVirtual_API.Controllers
         {
             try
             {
+                pd.SubTotal = pd.Cantidad * pd.PrecioUnitario;
+                pd.Igv = pd.SubTotal * 0.18;
+                pd.Neto = pd.SubTotal + pd.Igv;
                 db.PedidoDetalles.Add(pd);
+                
                 db.SaveChanges();
 
                 return $"Detail { pd.CodigoPedidoDetalle } created successfully";
@@ -53,6 +57,9 @@ namespace ProyectoTiendaVirtual_API.Controllers
         {
             try
             {
+                pd.SubTotal = pd.Cantidad * pd.PrecioUnitario;
+                pd.Igv = pd.SubTotal * 0.18;
+                pd.Neto = pd.SubTotal + pd.Igv;
                 db.PedidoDetalles.Update(pd);
                 db.SaveChanges();
 

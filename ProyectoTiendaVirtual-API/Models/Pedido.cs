@@ -14,7 +14,7 @@ namespace ProyectoTiendaVirtual_API.Models
         public string? CodigoCliente { get; set; }
         public DateTime FechaHora { get; set; }
         public string Estado { get; set; } = null!;
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
         public virtual Cliente? CodigoClienteNavigation { get; set; }
         public virtual ICollection<PedidoDetalle> PedidoDetalles { get; set; }

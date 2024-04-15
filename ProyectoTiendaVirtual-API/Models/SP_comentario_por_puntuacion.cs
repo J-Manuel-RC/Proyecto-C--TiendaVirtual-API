@@ -9,6 +9,7 @@ namespace ProyectoTiendaVirtual_API.Models
         public string Producto { get; set; } = null!;
         public string? Descripcion { get; set; }
         public string? Comentario { get; set; }
+        public int Puntuacion { get; set; }
 
     }
 }

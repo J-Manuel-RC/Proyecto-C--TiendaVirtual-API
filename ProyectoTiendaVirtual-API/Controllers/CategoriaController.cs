@@ -36,6 +36,7 @@ namespace ProyectoTiendaVirtual_API.Controllers
         {
             try
             {
+                //cat.Activo = true;
                 db.Categoria.Add(cat);
                 db.SaveChanges();
 

@@ -18,45 +18,39 @@ namespace ProyectoTiendaVirtual_API.Controllers
         }
 
         // GET: api/<ConsultasController>
-        [HttpGet("GetComentario_por_producto/{producto}")]
-        public List<SP_comentario_por_producto> GetSP_comentario_por_producto(string producto)
+        [HttpGet("GetComentario_por_producto")]
+        public List<SP_comentario_por_producto> GetSP_comentario_por_producto()
         {
             return db.SP_Comentario_Por_Productos
-                                    .FromSqlRaw<SP_comentario_por_producto>("sp_comentario_por_producto {0}", producto)
+                                    .FromSqlRaw<SP_comentario_por_producto>("sp_comentario_por_producto")
                                     .ToList();
         }
 
         // GET api/<ConsultasController>/5
-        [HttpGet("GetComentario_por_usuario/{usuario}")]
-        public List<SP_comentario_por_usuario> GetSP_comentario_por_usuario(string usuario)
+        [HttpGet("GetComentario_por_usuario")]
+        public List<SP_comentario_por_usuario> GetSP_comentario_por_usuario()
         {
             return db.SP_Comentario_Por_Usuarios
-                                    .FromSqlRaw<SP_comentario_por_usuario>("sp_comentario_por_usuario {0}", usuario)
+                                    .FromSqlRaw<SP_comentario_por_usuario>("sp_comentario_por_usuario")
                                     .ToList();
         }
 
         // POST api/<ConsultasController>
-        [HttpGet("GetComentario_por_puntuacion/{puntuacion}")]
-        public List<SP_comentario_por_puntuacion> GetSP_Comentario_Por_Puntuacion(int puntuacion)
+        [HttpGet("GetComentario_por_puntuacion")]
+        public List<SP_comentario_por_puntuacion> GetSP_Comentario_Por_Puntuacion()
         {
             return db.SP_Comentario_Por_Puntuaciones
-                                    .FromSqlRaw<SP_comentario_por_puntuacion>("sp_comentario_por_puntuacion {0}", puntuacion)
+                                    .FromSqlRaw<SP_comentario_por_puntuacion>("sp_comentario_por_puntuacion")
                                     .ToList();
         }
 
         // PUT api/<ConsultasController>/5
-        [HttpGet("getProducto_por_marca/{marca}")]
-        public List<SP_producto_por_marca> GetSP_Producto_Por_Marca(string marca)
+        [HttpGet("getProducto_por_marca")]
+        public List<SP_producto_por_marca> GetSP_Producto_Por_Marca()
         {
             return db.SP_Producto_Por_Marcas
-                                    .FromSqlRaw<SP_producto_por_marca>("sp_producto_por_marca {0}", marca) 
+                                    .FromSqlRaw<SP_producto_por_marca>("sp_producto_por_marca") 
                                     .ToList();
-        }
-
-        // DELETE api/<ConsultasController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

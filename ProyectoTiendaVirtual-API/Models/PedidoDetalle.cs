@@ -9,10 +9,10 @@ namespace ProyectoTiendaVirtual_API.Models
         public string? CodigoPedido { get; set; }
         public string? CodigoProducto { get; set; }
         public int Cantidad { get; set; }
-        public decimal PrecioUnitario { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Igv { get; set; }
-        public decimal Neto { get; set; }
+        public double PrecioUnitario { get; set; }
+        public double SubTotal { get; set; }
+        public double Igv { get; set; }
+        public double Neto { get; set; }
 
         public virtual Pedido? CodigoPedidoNavigation { get; set; }
         public virtual Producto? CodigoProductoNavigation { get; set; }

@@ -17,7 +17,7 @@ namespace ProyectoTiendaVirtual_API.Models
         public string? CodigoMarca { get; set; }
         public string Nombre { get; set; } = null!;
         public string? Descripcion { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
         public string? Url { get; set; }
         public bool? Activo { get; set; }
 

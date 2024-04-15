@@ -20,6 +20,7 @@ namespace ProyectoTiendaVirtual_API.Controllers
         [HttpGet("list-orders")]
         public List<Pedido> GetOrders()
         {
+            //return db.Pedidos.Where(p => p.Estado != "cancelado").ToList();
             return db.Pedidos.ToList();
         }
 
@@ -69,6 +70,8 @@ namespace ProyectoTiendaVirtual_API.Controllers
         public string DeleteOrder(string id)
         {
             Pedido ped = db.Pedidos.Find(id)!;
+            db.Pedidos.Remove(ped);
+            // ped.Estado = "Cancelado";
             db.SaveChanges();
 
             return $"Order { ped.CodigoPedido } deleted successfully";

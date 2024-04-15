@@ -20,7 +20,8 @@ namespace ProyectoTiendaVirtual_API.Controllers
         [HttpGet("list-products")]
         public List<Producto> GetProducts()
         {
-            return db.Productos.Where(p => p.Activo == true).ToList();
+
+            return db.Productos.ToList();
         }
 
         // GET api/<ProductoController>/5
@@ -37,6 +38,7 @@ namespace ProyectoTiendaVirtual_API.Controllers
             try
             {
                 db.Productos.Add(prod);
+                prod.Activo = true;
                 db.SaveChanges();
 
                 return $"Product { prod.Nombre } created successfully";
@@ -69,7 +71,8 @@ namespace ProyectoTiendaVirtual_API.Controllers
         public string DeleteProduct(string id)
         {
             Producto prod = db.Productos.Find(id)!;
-            prod.Activo = false;
+            //prod.Activo = false;
+            db.Productos.Remove(prod);
             db.SaveChanges();
 
             return $"Product { prod.Nombre } deleted successfully";
