@@ -22,8 +22,9 @@ namespace ProyectoTiendaVirtual_API.Controllers
         // GET: api/<UsuarioController>
         [HttpGet("list-users")]
         public List<Usuario> GetUsers()
-        {
-            return db.Usuarios.Where(u => u.Activo == true).ToList();
+        { 
+        //return db.Usuarios.Where(u => u.Activo == true).ToList();
+            return db.Usuarios.ToList();
         }
 
         // GET api/<UsuarioController>/5
